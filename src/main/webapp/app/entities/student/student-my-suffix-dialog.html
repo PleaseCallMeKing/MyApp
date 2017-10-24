@@ -1,0 +1,54 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myStudentLabel" data-translate="myApp.student.home.createOrEditLabel">Create or edit a Student</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.student.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.student.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="myApp.student.studentNo" for="field_studentNo">Student No</label>
+            <input type="number" class="form-control" name="studentNo" id="field_studentNo"
+                    ng-model="vm.student.studentNo"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="myApp.student.studentName" for="field_studentName">Student Name</label>
+            <input type="text" class="form-control" name="studentName" id="field_studentName"
+                    ng-model="vm.student.studentName"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="myApp.student.studentScore" for="field_studentScore">Student Score</label>
+            <input type="number" class="form-control" name="studentScore" id="field_studentScore"
+                    ng-model="vm.student.studentScore"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="myApp.student.cource" for="field_cource">Cource</label>
+            <select class="form-control" id="field_cource" multiple name="cource" ng-model="vm.student.cources" ng-options="cource as cource.courceId for cource in vm.cources track by cource.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="myApp.student.teacher" for="field_teacher">Teacher</label>
+            <select class="form-control" id="field_teacher" name="teacher" ng-model="vm.student.teacherId" ng-options="teacher.id as teacher.teacherNo for teacher in vm.teachers"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

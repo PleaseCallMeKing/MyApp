@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "cource",
+            "otherEntityName": "cource",
+            "otherEntityField": "courceId",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "teacher(teacherNo)"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "student",
+            "otherEntityName": "student",
+            "otherEntityRelationshipName": "teacher"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "teacherNo",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "teacherName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "teacherPhone",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20171023064937",
+    "entityTableName": "teacher",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

@@ -1,0 +1,41 @@
+
+<div>
+    <h2><span data-translate="myApp.student.detail.title">Student</span> {{vm.student.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="myApp.student.studentNo">Student No</span></dt>
+        <dd>
+            <span>{{vm.student.studentNo}}</span>
+        </dd>
+        <dt><span data-translate="myApp.student.studentName">Student Name</span></dt>
+        <dd>
+            <span>{{vm.student.studentName}}</span>
+        </dd>
+        <dt><span data-translate="myApp.student.studentScore">Student Score</span></dt>
+        <dd>
+            <span>{{vm.student.studentScore}}</span>
+        </dd>
+        <dt><span data-translate="myApp.student.cource">Cource</span></dt>
+        <dd>
+            <span ng-repeat="cource in vm.student.cources">
+                <a ui-sref="cource-my-suffix-detail({id: cource.id})">{{cource.courceId}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="myApp.student.teacher">Teacher</span></dt>
+        <dd>
+            <a ui-sref="teacher-my-suffix-detail({id:vm.student.teacherId})">{{vm.student.teacherTeacherNo}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="student-my-suffix-detail.edit({id:vm.student.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

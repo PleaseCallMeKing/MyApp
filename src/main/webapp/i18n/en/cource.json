@@ -1,0 +1,24 @@
+{
+    "myApp": {
+        "cource" : {
+            "home": {
+                "title": "Cources",
+                "createLabel": "Create a new Cource",
+                "createOrEditLabel": "Create or edit a Cource"
+            },
+            "created": "A new Cource is created with identifier {{ param }}",
+            "updated": "A Cource is updated with identifier {{ param }}",
+            "deleted": "A Cource is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Cource {{ id }}?"
+            },
+            "detail": {
+                "title": "Cource"
+            },
+            "courceId": "Cource Id",
+            "courceName": "Cource Name",
+            "teacher": "Teacher",
+            "student": "Student"
+        }
+    }
+}

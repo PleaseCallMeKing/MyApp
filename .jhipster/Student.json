@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "student",
+            "relationshipName": "cource",
+            "otherEntityName": "cource",
+            "otherEntityField": "courceId",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "teacher",
+            "otherEntityName": "teacher",
+            "otherEntityField": "teacherNo"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "studentNo",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "studentName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "studentScore",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20171023064936",
+    "entityTableName": "student",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

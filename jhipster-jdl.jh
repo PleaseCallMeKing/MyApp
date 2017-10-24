@@ -1,0 +1,35 @@
+entity Student {
+	studentNo Long
+    studentName String
+    studentScore Long
+}
+entity Teacher {
+	teacherNo Long
+    teacherName String
+    teacherPhone Long
+}
+entity Cource {
+	courceId Long
+    courceName String
+}
+
+relationship ManyToMany {
+	Student{cource(courceId)} to Cource{student(studentNo)}
+}
+relationship OneToMany {
+	Teacher to Student{teacher(teacherNo)}
+}
+relationship OneToOne {
+	Teacher{Cource(courceId)} to Cource{teacher(teacherNo)}
+}
+
+// Set pagination options
+paginate Student, Cource with infinite-scroll
+
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Employee, Job
+// Set an angular suffix
+angularSuffix * with mySuffix
