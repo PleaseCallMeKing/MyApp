@@ -1,6 +1,7 @@
 package com.augwit.myapp.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModel;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,6 +12,7 @@ import java.util.Objects;
 /**
  * A Teacher.
  */
+@ApiModel(description = "test the effect of this annotation")
 @Entity
 @Table(name = "teacher")
 public class Teacher implements Serializable {

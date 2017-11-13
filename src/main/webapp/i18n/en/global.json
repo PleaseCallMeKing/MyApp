@@ -10,6 +10,7 @@
                 "studentMySuffix": "Student",
                 "teacherMySuffix": "Teacher",
                 "courceMySuffix": "Cource",
+                "book": "Book",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
