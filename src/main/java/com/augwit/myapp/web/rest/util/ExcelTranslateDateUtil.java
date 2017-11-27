@@ -43,7 +43,7 @@ public class ExcelTranslateDateUtil {
             is = file.getInputStream();
             HSSFWorkbook wb = new HSSFWorkbook(is);
             List<HSSFSheet> sheets = new ArrayList<>();
-            for(int i = 0; i < wb.getActiveSheetIndex(); i++){
+            for(int i = 0; i < wb.getNumberOfSheets(); i++){
                 HSSFSheet sheet = wb.getSheetAt(i);
                 sheets.add(sheet);
             }
@@ -121,50 +121,4 @@ public class ExcelTranslateDateUtil {
         }
         return cellValue;
     }
-
-   /* private Object getCellValue(HSSFSheet sheet, int rowNum,int colNum) {
-
-        HSSFRow row = sheet.getRow(rowNum);
-        if (row == null) {
-            row = sheet.createRow(rowNum);
-        }
-        HSSFCell cell = row.getCell(colNum);
-
-        if (cell == null) {
-            cell = row.createCell(colNum);
-            cell.setCellValue("null value");
-        }
-
-        Object cellValue = null;
-        CellType cellType = cell.getCellTypeEnum();
-        switch (cellType) {
-            case STRING:
-                cellValue = cell.getStringCellValue();
-                break;
-            case NUMERIC:
-                cellValue = cell.getNumericCellValue();
-                break;
-            case BLANK:
-                cellValue = "null blank";
-                break;
-            case _NONE:
-                cellValue = "none";
-                break;
-            case ERROR:
-                cellValue = "error value";
-                break;
-            case BOOLEAN:
-                cellValue = cell.getBooleanCellValue();
-                break;
-            case FORMULA:
-                cellValue = cell.getCellFormula();
-                break;
-            default:
-                cellValue = "未填写";
-                break;
-        }
-        return cellValue;
-    }*/
-
-
 }

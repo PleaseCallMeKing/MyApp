@@ -20,7 +20,8 @@
                 "sessions": "Sessions",
                 "login": "Sign in",
                 "logout": "Sign out",
-                "register": "Register"
+                "register": "Register",
+                "uploadExcel": "UploadExcel"
             },
             "admin": {
                 "main": "Administration",

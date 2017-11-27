@@ -6,16 +6,21 @@ import com.augwit.myapp.web.rest.util.ExcelTranslateDateUtil;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Map;
 
-@Controller
+@RestController
+@RequestMapping("/api")
 public class CityResource {
+
     private final CityService cityService;
+
 
     public CityResource(CityService cityService) {
         this.cityService = cityService;

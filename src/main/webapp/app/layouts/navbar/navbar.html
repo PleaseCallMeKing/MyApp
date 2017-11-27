@@ -1,19 +1,23 @@
 <nav class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
+
+            <!--这个Button 没有发现是做什么的 ，在view中没有显现-->
             <button type="button" class="navbar-toggle" ng-click="vm.toggleNavbar()">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+
             <a class="navbar-brand logo" href="#/" ng-click="vm.collapseNavbar()">
-                <img class="logo-img" src="content/images/logo-jhipster.png" alt="logo"/>
-                <span data-translate="global.title">MyApp</span> <span class="navbar-version">v{{VERSION}}</span>
+               <img class="logo-img" src="content/images/logo-jhipster.png" alt="logo"/>
+               <span data-translate="global.title">MyApp</span> <span class="navbar-version">v{{VERSION}}</span>
             </a>
         </div>
         <div class="navbar-collapse" uib-collapse="vm.isNavbarCollapsed" ng-switch="vm.isAuthenticated()">
             <ul class="nav navbar-nav navbar-right">
+                <!--Home-->
                 <li ui-sref-active="active">
                     <a ui-sref="home" ng-click="vm.collapseNavbar()">
                         <span class="glyphicon glyphicon-home"></span>
@@ -70,6 +74,13 @@
                         </span>
                     </a>
                     <ul class="dropdown-menu" uib-dropdown-menu>
+                        <!--Upload ExcelFile to DataBases-->
+                        <li ui-sref-active="active" ng-switch-when="true">
+                            <a ui-sref="uploadExcel" ng-click="vm.collapseNavbar()">
+                                <span class="glyphicon glyphicon-arrow-up"></span>&nbsp;
+                                <span data-translate="global.menu.account.uploadExcel">UploadExcel</span>
+                            </a>
+                        </li>
                         <li ui-sref-active="active" ng-switch-when="true">
                             <a ui-sref="settings" ng-click="vm.collapseNavbar()">
                                 <span class="glyphicon glyphicon-wrench"></span>&nbsp;
