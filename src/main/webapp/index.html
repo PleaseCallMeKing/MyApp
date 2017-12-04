@@ -25,20 +25,34 @@
     <!--[if lt IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+
+   <!-- 左上角那个带子，写着'development'-->
     <page-ribbon></page-ribbon>
+
+    <!--导航条-->
     <div ui-view="navbar" ng-cloak></div>
+    <!--中间的主要部分-->
     <div class="container">
         <div class="well" ui-view="content">
-            <!-- Angular views -->
+            &lt;!&ndash; Angular views &ndash;&gt;
         </div>
 
         <div class="footer" ng-cloak>
             <p data-translate="footer">This is your footer</p>
         </div>
     </div>
+
     <noscript>
         <h1>You must enable javascript to view this page.</h1>
     </noscript>
+  <!--  <div>
+        <span>at here, temportory add a file</span>
+        <form action="/uploadExcel" method="post" enctype="multipart/form-data">
+            <label for="file"/>
+            <input type="file" id="file"/>
+            <input type="submit" value="submit file"/>
+        </form>
+    </div>-->
     <!-- uncomment this for adding service worker
         <script>
             if ('serviceWorker' in navigator) {

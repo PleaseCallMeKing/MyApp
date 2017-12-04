@@ -337,6 +337,11 @@
             <artifactId>poi</artifactId>
             <version>3.17</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.4.5</version>
+        </dependency>
         <!-- jhipster-needle-maven-add-dependency -->
     </dependencies>
     <build>
@@ -507,7 +512,7 @@
                     <url>jdbc:mysql://localhost:3306/myApp</url>
                     <defaultSchemaName>myApp</defaultSchemaName>
                     <username>root</username>
-                    <password></password>
+                    <password>root</password>
                     <referenceUrl>hibernate:spring:com.augwit.myapp.domain?dialect=org.hibernate.dialect.MySQL5InnoDBDialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                     <verbose>true</verbose>
                     <logging>debug</logging>

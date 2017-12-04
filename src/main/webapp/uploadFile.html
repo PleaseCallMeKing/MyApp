@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="invoice2">
+<head>
+    <title>Pay for Somethings</title>
+    <script src="http://code.angularjs.org/1.2.25/angular.min.js"></script>
+    <script src="finance2.js"></script>
+    <script src="invoice2.js"></script>
+
+</head>
+<body>
+    <div ng-controller="InvoiceController as invoice">
+        <b>订单:</b>
+        <div>
+            数量： <input type="number" min="0" ng-model="invoice.qty" required>
+        </div>
+        <div>
+            单价： <input type="number" ng-model="invoice.cost" required>
+            <select ng-model="invoice.inCurr" style="width: 50px">
+                <option ng-repeat="c in invoice.currencies">{{c}}</option>
+            </select>
+        </div>
+        <div>
+            <b>总价：</b>
+            <span ng-repeat="c in invoice.currencies">
+                {{invoice.total(c) | currency:c}}
+            </span><br/>
+            <button class="btn" ng-click="invoice.pay()">支付</button>
+        </div>
+    </div>
+ <span>-------------------------next-------------------------------</span>
+    <div ng-controller="Controller">
+        <form novalidate class="simple-form">
+            Name: <input type="text" ng-model="user.name" /><br />
+            E-mail:<input type="text" ng-model="user.email" /><br />
+            Gender:<input type="radio" ng-model="user.gender" value="male" />male
+            <input type="radio" ng-model="user.gender" value="female" />female
+            <button ng-click="reset()">RESET</button>
+            <button ng-click="update(user)">SAVE</button>
+        </form>
+        <pre>form = {{user | json}}</pre>
+        <pre>master = {{master | json}}</pre>
+    </div>
+</body>
+</html>

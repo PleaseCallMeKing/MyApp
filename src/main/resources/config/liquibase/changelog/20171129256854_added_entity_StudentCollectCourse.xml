@@ -1,0 +1,27 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="carl.wang (generated)" id="1511956031327-1">
+        <createTable tableName="lms_student_collect_course">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="lms_student_collect_coursePK"/>
+            </column>
+            <column name="collect_date" type="TINYBLOB"/>
+            <column name="course_id" type="BIGINT"/>
+            <column name="course_name" type="VARCHAR(255)"/>
+            <column name="user_id" type="BIGINT"/>
+            <column name="user_name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="carl.wang (generated)" id="1511956031327-2">
+        <dropNotNullConstraint columnDataType="double precision" columnName="city_area" tableName="jhi_city"/>
+    </changeSet>
+    <changeSet author="carl.wang (generated)" id="1511956031327-3">
+        <dropNotNullConstraint columnDataType="varchar(255)" columnName="city_name" tableName="jhi_city"/>
+    </changeSet>
+    <changeSet author="carl.wang (generated)" id="1511956031327-4">
+        <dropNotNullConstraint columnDataType="varchar(255)" columnName="city_province" tableName="jhi_city"/>
+    </changeSet>
+    <changeSet author="carl.wang (generated)" id="1511956031327-5">
+        <dropNotNullConstraint columnDataType="varchar(255)" columnName="postal_code" tableName="jhi_city"/>
+    </changeSet>
+</databaseChangeLog>
